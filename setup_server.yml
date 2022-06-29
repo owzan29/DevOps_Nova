@@ -1,0 +1,40 @@
+---
+- name: Setup Devops Server
+  hosts: devops
+  vars_files:
+    - group_vars/devops
+  tasks:
+    - name: Check EPEL Repository
+      yum:
+        name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+        state: present
+
+    - name: Check REMI Repository
+      yum:
+        name: https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+        state: present
+
+    - name: Check all packages are installed
+      yum:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ packages_need }}"
+      notify:
+        - setup db password
+
+    - name: Check version php
+      yum:
+        name: php
+        state: latest
+    
+    - name: Check all services are running
+      service:
+        name: "{{ item }}"
+        state: started
+      loop: "{{ all_service }}"
+
+  handlers:
+    - name: setup db password
+      mysql_user:
+        name: root
+        password: DevOPS2022

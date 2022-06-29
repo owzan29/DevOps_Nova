@@ -1,0 +1,75 @@
+---
+- name: Setup DevOps WebApps
+  hosts: devops
+  vars_files:
+    - group_vars/devops
+  tasks:
+    - name: Check all dependency packages
+      yum:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ wp_dependency }}"
+
+    - name: Ensure wordpress database exist
+      mysql_db:
+        login_user: root
+        login_password: DevOPS2022
+        name: wordpress_db
+        state: present
+
+    - name: Ensure wordpress database user exists
+      mysql_user:
+        login_user: root
+        login_password: DevOPS2022
+        name: wordpress_user
+        password: DevOPS2022
+        priv: 'wordpress_db.*:ALL'
+
+    - name: Ensure wordpress source code downloaded
+      unarchive:
+        src: https://wordpress.org/wordpress-5.8.4.tar.gz
+        dest: /var/www/
+        remote_src: yes
+
+    - name: Ensure HTTP Configures are sent
+      copy:
+        src: files/httpd_config/devops.conf
+        dest: /etc/httpd/conf.d/
+
+    - name: Ensure HTTPS Configures are sent
+      copy:
+        src: files/httpd_config/devops-le-ssl.conf
+        dest: /etc/httpd/conf.d/
+      notify:
+        - restart httpd
+
+    - name: Ensure sample config file is sent
+      copy:
+        src: files/wp_config/wp-config.php
+        dest: /var/www/wordpress/wp-config.php
+
+    - name: Ensure wordpress already configured
+      lineinfile:
+        path: /var/www/wordpress/wp-config.php
+        regexp: "{{ item.regexp }}"
+        line: "{{ item.line }}"
+      with_items:
+        - {'regexp': "define\\( 'DB_NAME', '(.)+' \\);", 'line': "define( 'DB_NAME', 'wordpress_db' );"}
+        - {'regexp': "define\\( 'DB_USER', '(.)+' \\);", 'line': "define( 'DB_USER', 'wordpress_user' );"}
+        - {'regexp': "define\\( 'DB_PASSWORD', '(.)+' \\);", 'line': "define( 'DB_PASSWORD', 'DevOPS2022' );"}
+
+    - name: Ensure directory ownership
+      file:
+        path: /var/www/wordpress/
+        state: directory
+        recurse: yes
+        owner: apache
+
+    - name: Ensure directory permission
+      command: chmod -Rf 775 /var/www/wordpress
+
+  handlers:
+    - name: restart httpd
+      yum: 
+        name: httpd
+        state: restarted
