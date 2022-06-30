@@ -1,0 +1,584 @@
+.clear:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden
+}
+
+.clear .widefat {
+    margin: 2px;
+    padding: 3px 5px;
+}
+
+.tmtable {
+    width: 30px;
+    float: left;
+    overflow: hidden;
+    margin: 0 2 0 0;
+    border: 1px solid #ddd;
+    margin: 1px 2px 0 0 !important;
+}
+
+.tmtable input[type="text"] {
+    height: 25px;
+    line-height: 1;
+    border: 0;
+    box-shadow: 0 0 0 transparent;
+    padding: 0 5px;
+    margin: 0;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .07);
+    width: 30px;
+    text-align: center;
+}
+
+.timehead {
+    margin: 0 0 10px;
+    padding: 0 0 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.timesample {
+    margin: 0 0 10px;
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.tday {
+    width: 20%;
+    float: left;
+}
+
+.ttimer {
+    width: 80px;
+    float: left;
+}
+
+.spc {
+    width: 5px;
+    float: left;
+    line-height: 26px;
+}
+
+.tloc {
+    width: 30%;
+    float: left;
+}
+
+.tloc input {
+    width: 97%;
+}
+
+.texte {
+    width: 20%;
+    float: left;
+}
+
+.inmed {
+    width: 80%;
+    float: left;
+}
+
+#repeatable-fieldset-one {
+    width: 100%;
+}
+
+#edulisting {
+    width: 100%;
+}
+
+#worklisting {
+    width: 100%;
+	margin:10px 0 0;
+}
+
+#weepac.postbox {
+    border: 0;
+    margin: 0;
+}
+
+#weepac h2 {
+    background: #036;
+    color: #fff;
+    border: 0;
+}
+
+.js #weepac.postbox .handlediv .toggle-indicator:before {
+    color: #fff;
+}
+
+#quotas h2 {
+    background: #1a97c8;
+    color: #fff;
+    border: 0;
+}
+
+.js #quotas.postbox .handlediv .toggle-indicator:before {
+    color: #fff;
+}
+
+#quotas .habis {
+    color: #dd2222;
+}
+
+#vidtour.postbox {
+    border: 0;
+	border-bottom: 4px solid #ca0a38;
+}
+
+#vidtour h2 {
+    background: #ca0a38;
+    color: #fff;
+    border: 0;
+}
+
+.js #vidtour.postbox .handlediv .toggle-indicator:before {
+    color: #fff;
+}
+
+#vidtour .vidhalf {
+    width: 50%;
+    float: left;
+}
+
+#vidtour .vidhalf strong {
+    color: #d33;
+}
+
+#vidtour .vidhalf .previd {
+    padding: 0 0 0 12px;
+}
+
+#vidtour .vidhalf .previd iframe {
+    width: 100%; 
+	height: 230px;
+}
+
+#itinerary.postbox {
+    border: 0;
+	border-bottom: 4px solid #036;
+}
+
+#itinerary h2 {
+    background: #036;
+    color: #fff;
+    border: 0;
+}
+
+.vat {
+vertical-align: top;
+padding: 0 0 0 15px;
+}
+
+.js #itinerary.postbox .handlediv .toggle-indicator:before {
+    color: #fff;
+}
+
+#paketour_jadwal.postbox {
+    border: 0;
+	margin: 0;
+}
+
+#poppack.postbox {
+    border: 0;
+}
+
+.js #poppack.postbox .handlediv {
+    display: none;
+}
+
+#poppack .inside {
+    margin: 0 ! important;
+}
+
+#poppack .inside .inclu {
+    margin-right:10px;
+}
+
+#poppack h2 {
+    display: none;
+}
+
+#rentprice.postbox {
+    border: 0;
+	margin: 0;
+}
+
+#rentprice h2 {
+    background: #036;
+    color: #fff;
+    border: 0;
+}
+
+.js #rentprice.postbox .handlediv .toggle-indicator:before {
+    color: #fff;
+}
+
+#rentdet.postbox {
+    border: 0;
+	background: #1aa4cc;
+	color: #fff;
+}
+
+#rentdet.postbox .inside {
+    padding: 0 12px 4px;
+}
+
+#rentdet h2 {
+    background: #036;
+    color: #fff;
+    border: 0;
+}
+
+.js #rentdet.postbox .handlediv .toggle-indicator:before {
+    color: #fff;
+}
+
+.pd {
+    display: inline-block;
+}
+
+.bd {
+    display: none;
+}
+
+.inside {
+    position: relative;
+}
+
+.on-off {
+    display: inline-block;
+    float: right;
+	height: 28px;
+    max-width: 200px;
+    margin-top: 10px;
+	position: absolute;
+    right: 12px;
+	overflow: hidden;
+}
+
+.hartext {
+    line-height: 28px;
+    margin: -6px -12px 0;
+    padding: 10px 12px;
+    background: #cce7f8;
+}
+
+.wp-core-ui .bd.button-primary {
+    background: #ca0a38;
+    border-color: #ca0a38;
+    box-shadow: 0 1px 0 #006799;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 0 0 #006799;
+}
+
+.protimer {
+    margin: 0 -12px -12px;
+    padding: 3px 12px;
+    background: #036;
+    color: #fff;
+    clear: both;
+}
+
+#clockz {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.tbox {
+    width: 100px;
+    padding: 6px 0 18px 0;
+    height: auto;
+    float: left;
+    text-align: center;
+}
+
+.dayz,
+.hourz,
+.minutez,
+.secondz {
+    font-size: 35px;
+    line-height: 1.8;
+    font-weight: bold;
+}
+
+.secondz {
+    color: #a8d3f7
+}
+
+.wp-core-ui .button.butred {
+    background: #ca0a38;
+    border-color: #ca0a38;
+    color: #fff;
+}
+
+.hartext span {
+    color: #dd3333;
+}
+
+.expired {
+    width: 100px;
+}
+
+.ttm {
+    width: 30px;
+    text-align: center;
+}
+
+.sd {
+    display: none;
+}
+
+.sd.disc {
+    display: block !important;
+}
+
+.half {
+    width: 20%;
+    float: left;
+}
+
+#wee_events .half {
+    width: 25%;
+    float: left;
+}
+
+#quotas #poststuff h2 {
+    background: #25936c;
+	color: #ffffff;
+}
+
+.qquota {
+display: inline-block; 
+margin: 0 10px 0 0;
+}
+
+.inqq {
+line-height: 27px;
+}
+
+.tamqu {
+margin: 0 30px 0 0;
+}
+
+.kolqu {
+width: 50px; 
+display: inline-block; 
+margin: 0 10px 0 0;
+}
+
+.halfin textarea {
+    height: 150px;
+}
+
+.fin {
+    padding: 0 5px;
+}
+
+.num {
+    width: 8%;
+    float: left;
+    text-align: center;
+}
+
+.num input {
+    text-align: center;
+}
+
+.dels {
+    width: 12%;
+    float: left;
+}
+
+.half.dh.disc {
+    display: block;
+}
+
+.halfin {
+    margin: 0 3px 3px 0
+}
+
+.full {
+    width: 100%
+}
+
+.addnew {
+    border-top: 1px solid #ddd;
+    padding: 12px 0 0;
+}
+
+.quart {
+    width: 25%;
+    float: left;
+}
+
+.onoff {
+    position: relative;
+}
+
+.onoff p {
+    margin-right: 100px;
+}
+
+.half.dh {
+    display: none;
+}
+
+.hd,
+.dd {
+    color: #00a0d2;
+    text-decoration: underline;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.photo {
+    max-width: 200px;
+    display: block;
+    height: auto;
+    margin: 10px auto;
+}
+
+#gallery-metabox-list {
+    clear: both;
+    width: 100%;
+    display: block;
+}
+
+#gallery-metabox-list li {
+    width: 25%;
+	min-height: 100px;
+    float: left;
+    position: relative;
+}
+
+#gallery-metabox-list li img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+#gallery-metabox-list li div {
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 15px;
+    z-index: 10;
+}
+
+#gallery-metabox-list li a {
+    background: #000;
+    display: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 24px;
+    height: 24px;
+}
+
+#gallery-metabox-list li:hover a {
+    display: block;
+}
+
+#gallery-metabox-list li a.change-image {
+    float: left;
+    color: #fff;
+    text-decoration: none;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    padding: 0px 10px;
+    z-index: 10;
+}
+
+#gallery-metabox-list li a.remove-image {
+    float: right;
+    color: #fff;
+    text-decoration: none;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    padding: 0px 10px;
+    z-index: 10;
+}
+
+#gallery-cover-list {
+    clear: both;
+    width: 100%;
+    display: block;
+}
+
+#gallery-cover-list li {
+    width: 25%;
+	min-height: 100px;
+    float: left;
+    position: relative;
+}
+
+#gallery-cover-list li img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+#gallery-cover-list li div {
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 15px;
+    z-index: 10;
+}
+
+#gallery-cover-list li a {
+    background: #000;
+    display: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 24px;
+    height: 24px;
+}
+
+#gallery-cover-list li:hover a {
+    display: block;
+}
+
+#gallery-cover-list li a.change-image {
+    float: left;
+    color: #fff;
+    text-decoration: none;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    padding: 0px 10px;
+    z-index: 10;
+}
+
+#gallery-cover-list li a.remove-image {
+    float: right;
+    color: #fff;
+    text-decoration: none;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    padding: 0px 10px;
+    z-index: 10;
+}
+
+@media screen and (max-width: 480px) {
+    .half {
+        width: 100%;
+        float: none;
+    }
+    .quart {
+        width: 100%;
+        float: none;
+    }
+}
