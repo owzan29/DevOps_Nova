@@ -1,0 +1,26 @@
+---
+- name: Generate SSL for WebApp
+  hosts: devops
+  vars:
+    - server_hostname: app.devops-nova.me
+  tasks:
+    - name: Generate SSL private key
+      openssl_privatekey:
+         path: /root/ssl/{{ server_hostname }}_privkey.pem
+         size: 2048
+         type: RSA
+
+    - name: Generate SSL CSR
+      openssl_csr:
+         path: /root/ssl/{{ server_hostname }}.csr
+         privatekey_path: /root/ssl/{{ server_hostname }}_privkey.pem
+         country_name: ID
+         organization_name: devops
+         email_address: admin@devops-nova.me
+         common_name: "{{ server_hostname }}"
+
+    - name: Copy CSR
+      fetch:
+        src: /root/ssl/{{ server_hostname }}.csr
+        dest: files/ssl/
+        flat: yes

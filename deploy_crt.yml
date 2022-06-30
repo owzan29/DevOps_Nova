@@ -1,0 +1,10 @@
+---
+- name: Deploy commercial CRT to WebApps
+  hosts: devops
+  vars:
+    - path_dest: /root/ssl/commercial
+  tasks:
+    - name: Copy CRT to remote directory
+      copy:
+        src: files/ssl/app_devops-nova_me.crt
+        dest: "{{ path_dest }}/sectigo/"
